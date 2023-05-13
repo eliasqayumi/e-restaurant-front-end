@@ -1,0 +1,17 @@
+<div (window:resize)="onResize()" id="ih-carousel-container" class="ih-carousel-container slide-in-top">
+<span id="ih-carousel-prev-btn" (click)="onCarouselArrowClick('left')" class="ih-carousel-prev-btn">
+  <
+</span>
+  <span id="ih-carousel-next-btn" (click)="onCarouselArrowClick('right')" class="ih-carousel-next-btn">
+>
+</span>
+  <div #ihCarouselInner class="ih-carousel-inner">
+    <div *ngFor="let item in number0fItems(20); let i=index;">
+      <div (swipe)="onSwipe($event)" class="ih-carousel-item">
+        <div container="body" class="circle-content-cntnr text-center">
+          <div class="content-3" style="font-size: 26px;">{{i + 1}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

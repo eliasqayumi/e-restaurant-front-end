@@ -1,0 +1,29 @@
+<nav class="navbar  bg-light" [ngClass]="'navbar-'+currentBreakpoint">
+  <form [formGroup]="searchGroup" [class]="searchGroup.valid? 'search-bar valid': 'search-bar invalid'">
+    <div class="search-bar-main">
+      <div class="search-tag">
+        <input class="search" type="search" placeholder="Restaurant, food and coffee"
+               [formControlName]="FORM_NAME.SEARCH" aria-label="Search" required>
+      </div>
+    </div>
+    <button class=" search-btn my-2 my-sm-0" [disabled]="!searchGroup.valid" type="submit">
+      <fa-icon [icon]="magnifyingGlass"></fa-icon>
+    </button>
+  </form>
+  <div class="header-bar">
+    <button class="button" type="submit" [hidden]="!(currentBreakpoint ==='small'||currentBreakpoint ==='x-small')">
+      <fa-icon  [icon]="menuBar"></fa-icon>
+    </button>
+    <button class="button" type="submit" [hidden]="(currentBreakpoint ==='small'||currentBreakpoint ==='x-small')">Menu
+      <fa-icon  [icon]="ellipseVertical"></fa-icon>
+    </button>
+    <button class="button" type="submit" [hidden]="(currentBreakpoint ==='small'||currentBreakpoint ==='x-small')">Basket
+      <fa-icon [icon]="basketShopping"></fa-icon>
+    </button>
+    <button class="button" type="submit" [hidden]="(currentBreakpoint ==='small'|| currentBreakpoint ==='x-small')">Login
+      <fa-icon [icon]="user"></fa-icon>
+      <fa-icon [icon]="chevronDown"></fa-icon>
+    </button>
+  </div>
+</nav>
+{{currentBreakpoint}}
